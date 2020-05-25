@@ -8,5 +8,7 @@ Specifically, you need to know how to build clean and compelling user interfaces
 
 
 By building this app, you will demonstrate your understanding of the foundational elements of programming for Android. Your app will communicate with the Internet and provide a responsive and delightful user experience.
+
+
 ##Instructions
 Add your own __API__ key to `/app/src/main/java/com/codinguniverse/movie/utils/NetworkUtils.java` to variable __API_KEY__
