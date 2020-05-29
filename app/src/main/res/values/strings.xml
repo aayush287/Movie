@@ -6,4 +6,10 @@
     <string name="release_date_txt">Release Date:</string>
     <string name="user_rating_txt">User Rating:</string>
     <string name="default_txt">No Data found</string>
+    <string name="trailers_headline_txt">Trailers</string>
+    <string name="trailer_img_desc">Trailer Image</string>
+    <string name="review_headline_text">Reviews</string>
+    <string name="favourite_txt">Favourites</string>
+    <string name="mark_fav">Mark as Favourite</string>
+    <string name="un_mark_fav">Remove from Favourite</string>
 </resources>

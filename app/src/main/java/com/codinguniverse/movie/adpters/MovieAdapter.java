@@ -1,6 +1,7 @@
 package com.codinguniverse.movie.adpters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,9 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
+    private static final String TAG = "MovieAdapter";
 
     private List<MovieModel> mMovieModels;
-    private Context mContext;
 
     /*
      * An on-click handler that we've defined to make it easy for an Activity to interface with
@@ -41,7 +42,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.movie_item, parent, false);
-        mContext = parent.getContext();
         return new MovieViewHolder(view);
     }
 
@@ -78,7 +78,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         }
 
         void bind(String imagePath){
-            Picasso.with(mContext).load(ImagePath.buildImagePath(imagePath)).into(posterImage);
+            Picasso.get().load(ImagePath.buildImagePath(imagePath)).into(posterImage);
          }
         /**
          * This gets called by the child views during a click.

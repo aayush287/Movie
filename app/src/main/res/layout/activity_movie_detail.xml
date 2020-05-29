@@ -10,6 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/original_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="91dp" />
+
         <ImageView
             android:id="@+id/poster_image"
             android:layout_width="200dp"
@@ -17,7 +37,7 @@
             android:contentDescription="@string/movie_poster_desc_txt"
             android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
             app:srcCompat="@drawable/default_image_placeholder" />
 
         <TextView
@@ -31,7 +51,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/poster_image"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
 
         <TextView
             android:id="@+id/release_date"
@@ -49,13 +69,11 @@
             android:id="@+id/user_rating_heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="32dp"
             android:text="@string/user_rating_txt"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/poster_image"
+            app:layout_constraintStart_toStartOf="@+id/release_date_heading"
             app:layout_constraintTop_toBottomOf="@+id/release_date" />
 
         <TextView
@@ -71,22 +89,6 @@
             app:layout_constraintStart_toEndOf="@+id/user_rating_heading" />
 
         <TextView
-            android:id="@+id/original_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:padding="8dp"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/poster_image" />
-
-        <TextView
             android:id="@+id/overview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -98,7 +100,80 @@
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/original_title" />
+            app:layout_constraintTop_toBottomOf="@+id/poster_image" />
+
+        <TextView
+            android:id="@+id/trailers_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/trailers_headline_txt"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/overview"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/overview"
+            app:layout_constraintTop_toBottomOf="@+id/overview" />
+
+        <Button
+            android:id="@+id/mark_fav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/mark_fav"
+            app:layout_constraintBottom_toTopOf="@+id/overview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/poster_image"
+            app:layout_constraintTop_toBottomOf="@+id/user_rating_heading" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/trailers_heading"
+            app:layout_constraintStart_toStartOf="@+id/trailers_heading"
+            app:layout_constraintTop_toBottomOf="@+id/trailers_heading">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trailer_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/review_hedline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/review_headline_text"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/review_hedline"
+            app:layout_constraintStart_toStartOf="@+id/review_hedline"
+            app:layout_constraintTop_toBottomOf="@+id/review_hedline">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/review_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
