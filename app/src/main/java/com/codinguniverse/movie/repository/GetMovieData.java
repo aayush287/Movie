@@ -19,7 +19,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class GetMovieData {
-    private static final String API_KEY = "80f9abf2cff2cd83ca0a3de930c9b6e6";
+    private static final String API_KEY = "YOUR_API_KEY";
 
     private static GetMovieData getMovieData;
 
