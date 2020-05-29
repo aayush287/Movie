@@ -11,4 +11,4 @@ By building this app, you will demonstrate your understanding of the foundationa
 
 
 ## Instructions
-Add your own __API__ key to `/app/src/main/java/com/codinguniverse/movie/utils/NetworkUtils.java` to variable __API_KEY__
+Add your own __API__ key to `app/src/main/java/com/codinguniverse/movie/repository/GetMovieData.java` to variable __API_KEY__
